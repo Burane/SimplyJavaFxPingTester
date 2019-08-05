@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modele.App">
+  <children>
+      <HBox prefHeight="25.0" prefWidth="907.0">
+         <children>
+          <MenuBar>
+            <menus>
+              <Menu mnemonicParsing="false" text="File">
+                <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save As…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onQuit" text="Quit" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="rag pa ci ta co ai kc mdr" />
+                </items>
+              </Menu>
+            </menus>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+          </MenuBar>
+            <TextField fx:id="ipAdresse" promptText="Entre un adresse ip" />
+            <Button mnemonicParsing="false" onAction="#onGo" text="GO !" />
+            <Button mnemonicParsing="false" onAction="#onStop" text="STOP !" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+    <SplitPane dividerPositions="0.33" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+               <children>
+                  <TextArea fx:id="infosPing" editable="false" maxWidth="500.0" prefHeight="551.0" prefWidth="392.0" />
+               </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="551.0" prefWidth="472.0">
+               <children>
+                  <LineChart fx:id="pingChart" layoutX="4.0" prefHeight="551.0" prefWidth="760.0" title="Ping évolution">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" prefHeight="486.0" prefWidth="19.0" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label maxWidth="-1.0" text="Created by Burane" HBox.hgrow="NEVER">
+               <font>
+            <Font size="11.0" fx:id="x3" />
+               </font>
+               <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+               </textFill></Label>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
